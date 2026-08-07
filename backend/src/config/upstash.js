@@ -10,7 +10,7 @@ const redis = Redis.fromEnv();
 // Create the rate limiter
 const ratelimit = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(5, "20 s"), // 5 requests every 20 seconds
+  limiter: Ratelimit.slidingWindow(100, "20 s"), // 100 requests every 20 seconds
   analytics: true,
 });
 
